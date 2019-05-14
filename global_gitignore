@@ -1,0 +1,21 @@
+##
+# OS X
+##
+.DS_Store
+.AppleDouble
+.LSOverride
+
+.deps.dev
+_build.dev
+.deps.test
+_build.test
+.lexical
+
+# IntelliJ
+.idea
+
+# Elixir
+.elixir_ls
+.lexical
+deps
+_build

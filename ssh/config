@@ -1,0 +1,17 @@
+ServerAliveInterval 60
+
+Host *.localdomain
+  ProxyJump call-cc.be
+
+Host *.isolated
+  ProxyJump call-cc.be
+
+Host *.local
+  ProxyJump call-cc.be
+
+Host call-cc.be
+  HostName call-cc.be
+  User root
+
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"

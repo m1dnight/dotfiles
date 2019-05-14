@@ -1,0 +1,21 @@
+#!/bin/bash
+
+function generate_password() {
+    openssl rand -base64 40
+}
+
+function gk() {
+    gitk --all . & disown
+}
+
+function skim() {
+    sk \
+        --ansi \
+        --delimiter : \
+        --layout=reverse-list \
+        -i \
+        -c 'rg --color=always --line-number "{}"' \
+        --preview 'bat --color=always --theme 1337 --style=numbers --highlight-line {2} {1}' \
+        --preview-window "+{2}-/2" \
+        --bind 'ctrl-y:execute-silent(code --goto {1}:{2})+abort'
+}

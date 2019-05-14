@@ -1,0 +1,41 @@
+#!/bin/bash
+
+# opam
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+if [[ -f "${HOME}/.opam/opam-init/init.zsh" ]]; then
+	# shellcheck source=/dev/null
+    source '/Users/christophe/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+fi
+
+# iterm2
+if [[ -f "${HOME}/.iterm2_shell_integration.zsh" ]]; then
+	# shellcheck source=/dev/null
+    source "${HOME}/.iterm2_shell_integration.zsh"
+fi
+
+# brew
+if [[ $OSTYPE == 'darwin'* ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# asdf osx
+if [[ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
+	# shellcheck source=/dev/null
+	. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+fi
+
+# asdf linux
+if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
+	# shellcheck source=/dev/null
+	. "${HOME}/.asdf/asdf.sh"
+fi
+
+# cargo
+if [[ -f "${HOME}/.cargo/env" ]]; then
+	# shellcheck source=/dev/null
+	. "$HOME/.cargo/env"
+fi

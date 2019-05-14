@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Make OSX shut up about ZSH.
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Merge histories from multiple terminals.
+# http://northernmost.org/blog/flush-bash_history-after-each-command/
+export PROMPT_COMMAND='history -a'
+
+export HISTSIZE=1000000
+export HISTFILE=~/.zsh_history
+export SAVEHIST=1000000
+
+# https://askubuntu.com/questions/15926/how-to-avoid-duplicate-entries-in-bash-history
+export HISTCONTROL=ignoreboth:erasedups
+
+# History in iex.
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
+
+# default editor
+export EDITOR='emacsclient -nw -c'
+
+# Lang settings. Was necessary for Cocoapods.
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8

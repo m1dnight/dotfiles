@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# https://askubuntu.com/questions/87061/can-i-make-tab-auto-completion-case-insensitive-in-bash
+set completion-ignore-case on
+
+set bell-style none

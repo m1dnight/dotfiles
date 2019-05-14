@@ -1,0 +1,4 @@
+.fonts/*/.uuid
+.fonts/*/*/.uuid
+.fonts/*/*/*/.uuid
+.elixir_ls

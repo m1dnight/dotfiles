@@ -1,0 +1,8 @@
+#!/bin/bash
+
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
+if [[ $OSTYPE == 'linux'* ]]; then
+	alias pbcopy='xclip -selection clipboard'
+    alias pbpaste='xclip -out -selection clipboard'
+fi

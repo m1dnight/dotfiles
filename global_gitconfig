@@ -1,0 +1,118 @@
+[user]
+	email = christophe.detroyer@gmail.com
+	name = Christophe De Troyer
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOkft/6UX+r5mhV+4KrEe7bAgCQizCyfRcp0MoLQJVwO
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true
+
+[push]
+	default = matching
+
+[alias]
+	lg = log --oneline
+	aa = add -A :/
+
+[log]
+	date = relative
+
+[format]
+	pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
+
+[core]
+	excludesFile = ~/.gitignore
+	sshCommand = "ssh -i ~/.ssh/id_ecdsa"
+	attributesFile = ~/.gitattributes
+	editor = "emacsclient -nw -c"
+
+#################################################################################
+#### Colors
+
+[color]
+	ui = true
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = red
+
+#################################################################################
+#### Aliases
+
+[alias]
+	# Show all of my configured aliases
+	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+
+	# For when you made that commit a bit too early, amend
+	amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+
+	# Show all branches
+	br = branch -av
+
+	# Export as tarball
+	export = archive -o latest.tar.gz -9 --prefix=latest/
+
+	# Remove all files
+	rmall = rm -r --cached .
+
+	diffprev = diff HEAD^ HEAD
+
+	wip = !git add -A :/ && git commit -m 'wip commit'
+
+	# Show pretty log output
+	logp = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+
+	pushall = !git remote | xargs -L1 git push --all
+
+	bb = !~/better_branch.sh
+
+	k = !gitk --all . & disown
+
+[init]
+	defaultBranch = main
+
+[diff]
+	wsErrorHighlight = all
+	tool = difft
+
+[gpg]
+	format = ssh
+
+[commit]
+	gpgsign = true
+	template = /Users/christophe/.stCommitMsg
+
+[diff "elixir"]
+	xfuncname = ^.*def.+do$
+
+[rerere]
+	enabled = true
+
+[merge]
+	conflictStyle = diff3
+	ff = false
+
+[maintenance]
+	auto = false
+	strategy = incremental
+	repo = /Users/christophe/Documents/Code/scripts/dotfiles
+
+[rebase]
+	updateRefs = true
