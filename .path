@@ -3,3 +3,11 @@ export PATH=/home/christophe/.gem/ruby/2.3.0/bin:${PATH}
 
 # Go Home 
 export PATH=export PATH=$PATH:/usr/local/go/bin:${PATH}
+
+# Coreutils on OSX.
+export PATH=/usr/local/opt/coreutils/libexec/gnubin:${PATH}
+export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:${MANPATH}
+export PATH=/usr/local/opt/make/libexec/gnubin:${PATH}
+export MANPATH=/usr/local/opt/make/libexec/gnuman:${MANPATH}
+export PATH=/usr/local/opt/findutils/libexec/gnubin:${PATH}
+export MANPATH=/usr/local/opt/findutils/libexec/gnuman:${MANPATH}
