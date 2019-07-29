@@ -106,7 +106,6 @@ latexmk(){
 	local rfile 
 	rfile=$(readlink -m "${rdir}/$(basename "$file")")
 
-echo $rfile
 	docker run --rm          \
 		-v "${ldir}:${rdir}" \
 		-u "$(id -u)"\
