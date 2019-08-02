@@ -12,8 +12,13 @@ dotfiles:
     mkdir -p $(HOME)/.local/share;
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 
-	mkdir -p $(HOME)/.config/
-	ln -snf $(CURDIR)/i3 $(HOME)/.config/i3
+	mkdir -p $(HOME)/.config/ ;
+	ln -snf $(CURDIR)/i3 $(HOME)/.config/i3 ;
+
+	mkdir -p $(HOME)/.ssh/ ;
+	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
+	
+	
 	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
 	git update-index --skip-worktree $(CURDIR)/.gitconfig;
 

@@ -1,0 +1,33 @@
+Host anorak
+     User christophe
+     Hostname call-cc.be
+
+Host dockerd
+     User christophe 
+     HostName 192.168.1.201
+     ProxyCommand ssh -q -W %h:%p anorak
+
+Host webserver 
+     User christophe
+     HostName 192.168.1.202
+     ProxyCommand ssh -q -W %h:%p anorak
+
+Host plex
+     User christophe 
+     HostName 192.168.1.203
+     ProxyCommand ssh -q -W %h:%p anorak
+
+Host media
+     User christophe 
+     HostName 192.168.1.204
+
+Host owncloud
+     User christophe 
+     HostName 192.168.1.206
+     ProxyCommand ssh -q -W %h:%p anorak
+
+Host gitlab
+     HostName 192.168.1.207
+     User christophe
+     ProxyCommand ssh -q -W %h:%p anorak
+     Port 2222
