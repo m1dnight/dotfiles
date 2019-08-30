@@ -162,3 +162,6 @@ _testmain.go
 
 # linux kernel debs
 linux-*.deb
+
+# Elixir 
+.elixir_ls
