@@ -1,3 +1,6 @@
+# Home bins
+export PATH=/home/christophe/bin:${PATH}
+
 # Ruby path Debian
 export PATH=/home/christophe/.gem/ruby/2.3.0/bin:${PATH}
 
