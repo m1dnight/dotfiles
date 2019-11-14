@@ -91,3 +91,7 @@ exec --no-startup-id owncloud
 exec_always --no-startup-id /home/christophe/bin/mouse.sh
 exec_always --no-startup-id /home/christophe/bin/remote.sh
 exec --no-startup-id feh --bg-fill ${HOME}/wallpaper.jpg
+
+# Open nautilus in floating mode.
+#for_window [class="[.]*"] floating enable
+#for_window [class="Nautilus"] floating enable

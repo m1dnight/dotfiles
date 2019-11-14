@@ -109,7 +109,6 @@ latexmk(){
 	docker run --rm          \
 		-v "${ldir}:${rdir}" \
 		-u "$(id -u)"\
-		--name latexmk   \
 		${DOCKER_REPO_PREFIX}/latexmk "${flags[@]}" "${rfile}"
 }
 
@@ -148,7 +147,6 @@ latexindent(){
 	rfile=$(readlink -m "/$(basename "$file")")
 	docker run --rm \
 		-v "${lfile}:${rfile}" \
-		--name latexindent \
 		${DOCKER_REPO_PREFIX}/latexindent "${flags[@]}" "${rfile}"
 }
 
