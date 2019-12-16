@@ -89,28 +89,28 @@ asciidoctor(){
 		${DOCKER_REPO_PREFIX}/asciidoctor "${flags[@]}" "${rfile}"
 }
 
-latexmk(){
-	local pars=("$@")
-	local file="${pars[${#pars[@]}-1]}"
-	local flags=("${pars[@]:0:${#pars[@]}-1}")
+# latexmk(){
+# 	local pars=("$@")
+# 	local file="${pars[${#pars[@]}-1]}"
+# 	local flags=("${pars[@]:0:${#pars[@]}-1}")
 
-	local lfile
-	lfile=$(readlink -m "$(pwd)/${file}")
+# 	local lfile
+# 	lfile=$(readlink -m "$(pwd)/${file}")
 
-	local ldir
-	ldir=$(dirname "$lfile")
+# 	local ldir
+# 	ldir=$(dirname "$lfile")
 
-	local rdir
-	rdir="/tmp/"
+# 	local rdir
+# 	rdir="/tmp/"
 
-	local rfile 
-	rfile=$(readlink -m "${rdir}/$(basename "$file")")
+# 	local rfile 
+# 	rfile=$(readlink -m "${rdir}/$(basename "$file")")
 
-	docker run --rm          \
-		-v "${ldir}:${rdir}" \
-		-u "$(id -u)"\
-		${DOCKER_REPO_PREFIX}/latexmk "${flags[@]}" "${rfile}"
-}
+# 	docker run --rm          \
+# 		-v "${ldir}:${rdir}" \
+# 		-u "$(id -u)"\
+# 		${DOCKER_REPO_PREFIX}/latexmk "${flags[@]}" "${rfile}"
+# }
 
 detex(){
     # Get filename.
