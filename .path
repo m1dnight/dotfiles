@@ -1,8 +1,8 @@
 # Home bins
-export PATH=/home/christophe/bin:${PATH}
+export PATH=$HOME/bin:${PATH}
 
 # Ruby path Debian
-export PATH=/home/christophe/.gem/ruby/2.3.0/bin:${PATH}
+export PATH=$HOME/.gem/ruby/2.3.0/bin:${PATH}
 
 # Go Home 
 export PATH=export PATH=$PATH:/usr/local/go/bin:${PATH}
@@ -14,3 +14,13 @@ export PATH=/usr/local/opt/make/libexec/gnubin:${PATH}
 export MANPATH=/usr/local/opt/make/libexec/gnuman:${MANPATH}
 export PATH=/usr/local/opt/findutils/libexec/gnubin:${PATH}
 export MANPATH=/usr/local/opt/findutils/libexec/gnuman:${MANPATH}
+
+# Node on OSX
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+
+# Perl OSX
+PATH="$HOME/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="$HOME/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="$HOME/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"$HOME/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=$HOME/perl5"; export PERL_MM_OPT;
