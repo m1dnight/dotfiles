@@ -95,3 +95,9 @@ exec --no-startup-id feh --bg-fill ${HOME}/wallpaper.jpg
 # Open nautilus in floating mode.
 #for_window [class="[.]*"] floating enable
 #for_window [class="Nautilus"] floating enable
+
+# Volume buttons DasKeyboard
+
+bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
+bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
+bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
