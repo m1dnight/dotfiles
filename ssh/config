@@ -3,7 +3,7 @@ Host work
      HostName 134.184.43.197
 
 Host work-root
-     User christophe
+     User root
      HostName 134.184.43.197
 
 Host nas
