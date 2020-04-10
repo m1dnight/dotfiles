@@ -13,6 +13,7 @@
   pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
 [core]
   editor = vim
+	excludesfile = ~/.gitignore
 
 #################################################################################
 #### Colors

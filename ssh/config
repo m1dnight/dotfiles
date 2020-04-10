@@ -1,16 +1,20 @@
 Host work
      User christophe
-     Hostname 134.184.43.197
+     HostName 134.184.43.197
 
-Host artemis
+Host work-root
      User christophe
-     Hostname artemis.lan
+     HostName 134.184.43.197
+
+Host nas
+     User christophe
+     HostName nas.lan
      ProxyCommand ssh -q -W %h:%p mars
 
 Host mars
      User christophe
-     Hostname call-cc.be
+     HostName call-cc.be
 
 Host jupiter
      User christophe
-     Hostname jupiter.call-cc.be
+     HostName jupiter.call-cc.be

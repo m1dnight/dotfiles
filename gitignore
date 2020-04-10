@@ -192,7 +192,7 @@ erl_crash.dump
 hex_analysis-*.tar
 
 
-.elixir_ls
+.elixir_ls/
 
 ##
 # LaTeX

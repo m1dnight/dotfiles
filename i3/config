@@ -96,6 +96,7 @@ exec --no-startup-id feh --bg-fill ${HOME}/wallpaper.jpg
 # Find the classname with xprop 
 for_window [class="Nautilus"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Terminator"] floating enable
 
 # Volume buttons DasKeyboard
 
