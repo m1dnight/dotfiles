@@ -18,3 +18,7 @@ Host mars
 Host jupiter
      User christophe
      HostName jupiter.call-cc.be
+
+Host jupiter-root
+     User root
+     HostName jupiter.call-cc.be
