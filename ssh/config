@@ -14,3 +14,15 @@ Host mars
 Host jupiter
      User christophe
      HostName jupiter.call-cc.be
+
+Host jupiter-root
+     User root
+     HostName jupiter.call-cc.be
+
+Host work-root
+     HostName work.call-cc.be
+     User root
+
+Host mars-root
+     HostName mars.lan
+     User root
