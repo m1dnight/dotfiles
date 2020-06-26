@@ -2,6 +2,10 @@ Host work
      User christophe
      HostName 134.184.43.197
 
+Host work-root
+     HostName work.call-cc.be
+     User root
+
 Host nas
      User christophe
      HostName nas.lan
@@ -11,6 +15,10 @@ Host mars
      User christophe
      HostName call-cc.be
 
+Host mars-root
+     HostName mars.lan
+     User root
+
 Host jupiter
      User christophe
      HostName jupiter.call-cc.be
@@ -19,10 +27,14 @@ Host jupiter-root
      User root
      HostName jupiter.call-cc.be
 
-Host work-root
-     HostName work.call-cc.be
-     User root
+Host 134.184.43.128
+     HostName 134.184.43.128
+     User administrator
 
-Host mars-root
-     HostName mars.lan
+Host earth
+     HostName earth.lan
+     User christophe 
+
+Host earth-root
+     HostName earth.lan
      User root

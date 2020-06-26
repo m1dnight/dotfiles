@@ -15,6 +15,9 @@ dotfiles:
 	mkdir -p $(HOME)/.config/ ;
 	ln -snf $(CURDIR)/i3 $(HOME)/.config/i3 ;
 
+	mkdir -p $(HOME)/.config/ ;
+	ln -snf $(CURDIR)/dunst $(HOME)/.config/dunst ;
+
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
 	
