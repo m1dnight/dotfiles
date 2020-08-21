@@ -19,8 +19,8 @@ dotfiles:
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
 	
 	
-	ln -fn $(CURDIR)/gitignore $(HOME)/.gitignore;
-	git update-index --skip-worktree $(CURDIR)/.gitconfig;
+	ln -fn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
+	ln -fn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
 
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 	if [ -f /usr/local/bin/pinentry ]; then \
