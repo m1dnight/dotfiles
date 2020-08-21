@@ -9,9 +9,9 @@ Host work-root
 Host nas
      User christophe
      HostName nas.lan
-     ProxyCommand ssh -q -W %h:%p mars
+     ProxyCommand ssh -q -W %h:%p earth
 
-Host mars
+Host earth
      User christophe
      HostName call-cc.be
 
