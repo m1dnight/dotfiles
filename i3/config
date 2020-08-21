@@ -83,9 +83,10 @@ hide_edge_borders both
 
 focus_follows_mouse yes
 
-exec --no-startup-id i3-msg 'workspace 1; exec slack'
 exec --no-startup-id i3-msg 'workspace 1; exec thunderbird'
 exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+exec --no-startup-id i3-msg 'workspace 3; exec code'
+exec --no-startup-id i3-msg 'workspace 10; exec rambox'
 exec --no-startup-id owncloud
 
 exec_always --no-startup-id /home/christophe/bin/mouse.sh
