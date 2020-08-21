@@ -15,14 +15,12 @@ dotfiles:
 	mkdir -p $(HOME)/.config/ ;
 	ln -snf $(CURDIR)/i3 $(HOME)/.config/i3 ;
 
-	mkdir -p $(HOME)/.config/ ;
-	ln -snf $(CURDIR)/dunst $(HOME)/.config/dunst ;
-
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
 	
-	
 	ln -fn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
+	# I don't know what this is supposed to do to be fair.
+	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -fn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
 
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
