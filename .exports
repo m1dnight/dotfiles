@@ -34,3 +34,6 @@ fi
 
 # Remember Elixir history.
 export ERL_AFLAGS="-kernel shell_history enabled"
+
+# For nvm on osx.
+export NVM_DIR=~/.nvm
