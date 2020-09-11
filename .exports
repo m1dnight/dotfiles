@@ -37,3 +37,6 @@ export ERL_AFLAGS="-kernel shell_history enabled"
 
 # For nvm on osx.
 export NVM_DIR=~/.nvm
+
+# Flutter
+export PATH="$PATH:$HOME/development/flutter/bin"
