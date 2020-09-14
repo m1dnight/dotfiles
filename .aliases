@@ -141,3 +141,6 @@ alias prikey="more ~/.ssh/id_ecdsa | xclip -selection clipboard | echo '=> Priva
 
 # Pretty print json 
 alias jpp="python -m json.tool"
+
+# Weechat on VPS
+alias weechat="ssh christophe@jupiter.call-cc.be -t docker attach weechat"
