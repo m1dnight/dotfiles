@@ -1,5 +1,7 @@
 #!/bin/bash
-
+# When using i3 on debian with gnome you can no longer open the control 
+# center without this env var.
+export XDG_CURRENT_DESKTOP=GNOME
 # Make OSX stop nagging I use bash.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
