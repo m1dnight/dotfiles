@@ -8,11 +8,3 @@ for file in ~/.{bashrc,bash_prompt,aliases,functions,path,dockerfunc,exports,sec
 	fi
 done
 unset file
-
-# nvm for osx 
-
-if [ -f "$(brew --prefix nvm)/nvm.sh" ]; then
-    source $(brew --prefix nvm)/nvm.sh 
-else 
-	echo "WARN: Sourcing NVM on OSX, but the file is not found."
-fi
