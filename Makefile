@@ -17,7 +17,7 @@ dotfiles:
 
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
-	
+
 	ln -fn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
 	# I don't know what this is supposed to do to be fair.
 	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
@@ -29,6 +29,7 @@ dotfiles:
 	fi;
 
 	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
+	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
