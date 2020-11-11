@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Declare an array of string with type
+declare -a PackageArray=("tmux")
+ 
+# Iterate the string array using for loop
+for pkg in ${PackageArray[@]}; do
+    if brew ls --versions $pkg > /dev/null; then
+        echo "${pkg} is already installed"
+    else
+        brew install $pkg > /dev/null
+    fi
+done
+
+declare -a CaskPackageArray=("iterm2" "visual-studio-code")
+ 
+# Iterate the string array using for loop
+for pkg in ${CaskPackageArray[@]}; do
+    if brew list --cask --versions $pkg > /dev/null; then
+        echo "${pkg} is already installed"
+    else
+        brew cask install $pkg > /dev/null
+    fi
+done
