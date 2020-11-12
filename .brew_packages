@@ -12,13 +12,12 @@ for pkg in ${PackageArray[@]}; do
     fi
 done
 
-declare -a CaskPackageArray=("iterm2" "visual-studio-code")
+declare -a CaskPackageArray=("iterm2" "visual-studio-code" "spectacle" "owncloud" "gpg-suite")
  
-# Iterate the string array using for loop
 for pkg in ${CaskPackageArray[@]}; do
-    if brew list --cask --versions $pkg > /dev/null; then
+    if brew ls --versions $pkg > /dev/null; then
         echo "${pkg} is already installed"
     else
-        brew cask install $pkg > /dev/null
+        brew install $pkg > /dev/null
     fi
 done
