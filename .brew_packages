@@ -6,20 +6,23 @@ sudo -v
 declare -a PackageArray=("tmux" "elixir")
  
 # Iterate the string array using for loop
-for pkg in ${PackageArray[@]}; do
-    if brew ls --versions $pkg > /dev/null; then
+for pkg in "${PackageArray[@]}"; do
+    if brew ls --versions "$pkg" > /dev/null 2>&1; then
         echo "${pkg} is already installed"
     else
-        brew install $pkg > /dev/null
+        echo "Installing ${pkg}"
+        brew install "$pkg" > /dev/null
     fi
 done
 
-declare -a CaskPackageArray=("iterm2" "visual-studio-code" "spectacle" "owncloud" "gpg-suite" "pycharm-ce")
+declare -a CaskPackageArray=("iterm2" "visual-studio-code" "spectacle" "owncloud" "gpg-suite" "pycharm-ce" "intellij-idea-ce")
  
-for pkg in ${CaskPackageArray[@]}; do
-    if brew ls --versions $pkg > /dev/null &2>1; then
+for pkg in "${CaskPackageArray[@]}"; do
+    if brew list --cask "$pkg" > /dev/null 2>&1; then
         echo "${pkg} is already installed"
     else
-        brew install $pkg > /dev/null
+        echo "Installing ${pkg}"
+        brew install "$pkg" > /dev/null
     fi
 done
+echo "Done installing packages."
