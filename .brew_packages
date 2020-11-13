@@ -15,7 +15,7 @@ for pkg in "${PackageArray[@]}"; do
     fi
 done
 
-declare -a CaskPackageArray=("iterm2" "visual-studio-code" "spectacle" "owncloud" "gpg-suite" "pycharm-ce" "intellij-idea-ce")
+declare -a CaskPackageArray=("postbox" "iterm2" "visual-studio-code" "spectacle" "owncloud" "gpg-suite" "pycharm-ce" "intellij-idea-ce" "zoomus")
  
 for pkg in "${CaskPackageArray[@]}"; do
     if brew list --cask "$pkg" > /dev/null 2>&1; then
