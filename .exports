@@ -42,3 +42,6 @@ export NVM_DIR=~/.nvm
 
 # Flutter
 export PATH="$PATH:$HOME/development/flutter/bin"
+
+# User-local binaries.
+export PAHT="$PATH:$HOME/.local/bin"
