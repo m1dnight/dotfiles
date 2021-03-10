@@ -13,7 +13,7 @@ dotfiles:
 	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 
 	mkdir -p $(HOME)/.config/ ;
-	ln -snf $(CURDIR)/i3 $(HOME)/.config/i3 ;
+	ln -snf $(CURDIR)/i3 $(HOME)/.config ;
 
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
