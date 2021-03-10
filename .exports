@@ -45,3 +45,8 @@ export PATH="$PATH:$HOME/development/flutter/bin"
 
 # User-local binaries.
 export PAHT="$PATH:$HOME/.local/bin"
+
+# If we are on WSL, set the display to the host IP.
+if [[ $(cat /proc/version) =~ microsoft ]]; then 
+	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+fi
