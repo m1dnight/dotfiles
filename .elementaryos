@@ -1,3 +1,6 @@
 if [[ $(cat /etc/os-release) =~ elementary ]]; then 
-    # export XLIB_SKIP_ARGB_VISUALS=1
+    # Fix emacs 
+    alias emacs='XLIB_SKIP_ARGB_VISUALS=1 emacs'
+    sed -i '/Exec=\/usr\/bin\/emacs25 %F/c\Exec=\/usr\/bin\/env XLIB_SKIP_ARGB_VISUALS=1 emacs24 %F' /tmp/test.txt
 fi
+ 
