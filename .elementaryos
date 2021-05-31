@@ -1,5 +1,3 @@
 if [[ $(cat /etc/os-release) =~ elementary ]]; then 
-    echo "Exporting this shit" > /tmp/output.txt
-    export XLIB_SKIP_ARGB_VISUALS=1
-    export XLIB_SKIP_ARGB_VISUALS=1
+    # export XLIB_SKIP_ARGB_VISUALS=1
 fi
