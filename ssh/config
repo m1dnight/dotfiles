@@ -1,11 +1,10 @@
-Host christophe@call-cc.b
+Host christophe@call-cc.be
      User christophe
      HostName call-cc.be
  
  Host root@call-cc.be
      User root
      HostName call-cc.be
- 
  
  Host pi@trappist.local
      User pi
@@ -22,3 +21,11 @@ Host christophe@call-cc.b
  Host root@nas.local 
      User root
      HostName nas.local 
+
+Host christophe@christophe.dev
+     User christophe
+     HostName christophe.dev
+
+Host root@christophe.dev
+     User root
+     HostName christophe.dev
