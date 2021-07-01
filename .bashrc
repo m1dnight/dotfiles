@@ -123,7 +123,7 @@ fi
 # 	fi
 # fi
 # add alias for ssh to update the tty
-alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
+# alias ssh="gpg-connect-agent updatestartuptty /bye >/dev/null; ssh"
 
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
@@ -161,7 +161,7 @@ if [[ -f "${HOME}/.travis/travis.sh" ]]; then
 	source "${HOME}/.travis/travis.sh"
 fi
 
-for file in ~/.{bash_prompt,aliases,functions,path,dockerfunc,extra,exports}; do
+for file in ~/.{bash_prompt,aliases,functions,path,dockerfunc,extra,exports,elementaryos}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"

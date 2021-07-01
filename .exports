@@ -1,7 +1,9 @@
 #!/bin/bash
 # When using i3 on debian with gnome you can no longer open the control 
 # center without this env var.
-export XDG_CURRENT_DESKTOP=GNOME
+if [ -z ${XDG_CURRENT_DESKTOP+x} ]; then
+	export XDG_CURRENT_DESKTOP=GNOME
+fi
 # Make OSX stop nagging I use bash.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -45,3 +47,9 @@ export PATH="$PATH:$HOME/development/flutter/bin"
 
 # User-local binaries.
 export PAHT="$PATH:$HOME/.local/bin"
+
+# # If we are on WSL, set the display to the host IP.
+# Probably no longer necessary with previouw build.
+# if [[ $(cat /proc/version) =~ microsoft ]]; then 
+# 	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+# fi

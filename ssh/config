@@ -1,40 +1,31 @@
-Host work
-     User christophe
-     HostName 134.184.43.197
-
-Host work-root
-     HostName work.call-cc.be
-     User root
-
-Host nas
-     User christophe
-     HostName nas.lan
-     ProxyCommand ssh -q -W %h:%p earth
-
-Host earth
+Host christophe@call-cc.be
      User christophe
      HostName call-cc.be
-
-Host mars-root
-     HostName mars.lan
+ 
+ Host root@call-cc.be
      User root
-
-Host jupiter
+     HostName call-cc.be
+ 
+ Host pi@trappist.local
+     User pi
+     HostName trappist.local 
+ 
+ Host pi@pluto.local 
+     User pi 
+     HostName pluto.local 
+ 
+ Host christophe@neptune.local 
      User christophe
-     HostName jupiter.call-cc.be
-
-Host jupiter-root
+     HostName neptune.local 
+ 
+ Host root@nas.local 
      User root
-     HostName jupiter.call-cc.be
+     HostName nas.local 
 
-Host 134.184.43.128
-     HostName 134.184.43.128
-     User administrator
+Host christophe@christophe.dev
+     User christophe
+     HostName christophe.dev
 
-Host earth
-     HostName earth.lan
-     User christophe 
-
-Host earth-root
-     HostName earth.lan
+Host root@christophe.dev
      User root
+     HostName christophe.dev
