@@ -33,6 +33,12 @@ alias g="git"
 alias h="history"
 alias gc=". /usr/local/bin/gitdate && git commit -v "
 
+# Disks 
+alias df="df -h -x tmpfs -x overlay -T"
+
+# Docker 
+alias dpsa='docker ps -a --format="table {{.Names}}\t{{.Image}}\t{{.Status}}"'
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
 	colorflag="--color"
