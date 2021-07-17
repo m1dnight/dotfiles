@@ -29,3 +29,11 @@ Host christophe@christophe.dev
 Host root@christophe.dev
      User root
      HostName christophe.dev
+
+Host root@andromeda.local 
+    User root  
+    HostName andromeda.local 
+
+Host christophe@andromeda.local 
+    User christophe
+    HostName andromeda.local
