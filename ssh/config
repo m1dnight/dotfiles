@@ -6,21 +6,21 @@ Host christophe@call-cc.be
      User root
      HostName call-cc.be
  
- Host pi@trappist.local
+ Host pi@trappist.localdomain
      User pi
-     HostName trappist.local 
+     HostName trappist.localdomain 
  
- Host pi@pluto.local 
+ Host pi@pluto.localdomain 
      User pi 
-     HostName pluto.local 
+     HostName pluto.localdomain 
  
- Host christophe@neptune.local 
+ Host christophe@neptune.localdomain 
      User christophe
-     HostName neptune.local 
+     HostName neptune.localdomain 
  
- Host root@nas.local 
+ Host root@nas.localdomain 
      User root
-     HostName nas.local 
+     HostName nas.localdomain 
 
 Host christophe@christophe.dev
      User christophe
@@ -30,10 +30,10 @@ Host root@christophe.dev
      User root
      HostName christophe.dev
 
-Host root@andromeda.local 
+Host root@andromeda.localdomain 
     User root  
-    HostName andromeda.local 
+    HostName andromeda.localdomain 
 
-Host christophe@andromeda.local 
+Host christophe@andromeda.localdomain 
     User christophe
-    HostName andromeda.local
+    HostName andromeda.localdomain
