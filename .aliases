@@ -36,7 +36,7 @@ alias gc=". /usr/local/bin/gitdate && git commit -v "
 # Proxy 
 alias sshproxy="ssh -D 5000 cdetroye@soft.vub.ac.be"
 # Disks 
-alias df="df -h -x tmpfs -x overlay -T"
+alias df="df -h -x tmpfs -x overlay -x squashfs-T"
 
 # Docker 
 alias dpsa='docker ps -a --format="table {{.Names}}\t{{.Image}}\t{{.Status}}"'
