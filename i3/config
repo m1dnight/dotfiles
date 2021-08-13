@@ -1,5 +1,5 @@
 set $mod Mod4
-font pango:Monospace 12
+font pango:Monospace 16
 floating_modifier $mod
 bindsym $mod+Return exec terminator
 bindsym $mod+Shift+q kill
