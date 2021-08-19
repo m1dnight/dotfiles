@@ -1,0 +1,7 @@
+renamegit() {
+    echo "Renaming git"
+    git branch -m master main 
+    git push origin main 
+    git push --set-upstream origin main 
+    echo "Execute git symbolic-ref HEAD refs/heads/main on remote"
+}

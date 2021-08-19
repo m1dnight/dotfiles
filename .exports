@@ -46,7 +46,7 @@ export NVM_DIR=~/.nvm
 export PATH="$PATH:$HOME/development/flutter/bin"
 
 # User-local binaries.
-export PAHT="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # # If we are on WSL, set the display to the host IP.
 # Probably no longer necessary with previouw build.
