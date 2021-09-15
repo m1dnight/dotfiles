@@ -1,14 +1,14 @@
 set $mod Mod4
-font pango:Monospace 16
+font pango:Fira Code Mono 12
 floating_modifier $mod
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec gnome-terminal
 bindsym $mod+Shift+q kill
 bindsym $mod+d exec dmenu_run
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l exec "~/bin/fuzzy_lock.sh"
 exec xautolock -time 15 -locker '~/bin/fuzzy_lock.sh'
-bindsym $mod+semicolon focus right
+bindsym $mod+sembcolon focus right
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -77,30 +77,60 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 bar {
         status_command i3status
+        height 50
 }
 
 hide_edge_borders both
 
 focus_follows_mouse yes
 
-exec --no-startup-id i3-msg 'workspace 1; exec thunderbird'
-exec --no-startup-id i3-msg 'workspace 2; exec firefox'
-exec --no-startup-id i3-msg 'workspace 3; exec code'
-exec --no-startup-id i3-msg 'workspace 10; exec rambox'
+# exec --no-startup-id i3-msg 'workspace 1; exec thunderbird'
+# exec --no-startup-id i3-msg 'workspace 2; exec firefox'
+# exec --no-startup-id i3-msg 'workspace 3; exec code'
+# exec --no-startup-id i3-msg 'workspace 10; exec rambox'
 exec --no-startup-id owncloud
 
-exec_always --no-startup-id /home/christophe/bin/mouse.sh
-exec_always --no-startup-id /home/christophe/bin/remote.sh
+# exec_always --no-startup-id /home/christophe/bin/mouse.sh
+# exec_always --no-startup-id /home/christophe/bin/remote.sh
 exec --no-startup-id feh --bg-fill ${HOME}/wallpaper.jpg
 
 # Open some apps floating by default.
 # Find the classname with xprop 
-for_window [class="Nautilus"] floating enable
-for_window [class="Gnome-calculator"] floating enable
-for_window [class="Terminator"] floating enable
+# for_window [class="Nautilus"] floating enable
+# for_window [class="Gnome-calculator"] floating enable
+# for_window [class="Terminator"] floating enable
 
 # Volume buttons DasKeyboard
 
 bindsym XF86AudioRaiseVolume exec "amixer -D pulse sset Master 5%+"
 bindsym XF86AudioLowerVolume exec "amixer -D pulse sset Master 5%-"
 bindsym XF86AudioMute exec "amixer -D pulse set Master 1+ toggle"
+
+for_window [class=".*"] border pixel 0
+# gaps inner all 20
+# gaps outer all 5
+# gaps horizontal 40
+
+gaps inner 10
+gaps outer 10
+gaps horizontal 10
+gaps outer 10
+gaps top 10
+gaps bottom 0
+
+smart_gaps on 
+smart_gaps inverse_outer
+
+smart_gaps inverse_outer
+
+# Activate smart borders (always)
+smart_borders on
+
+# Activate smart borders (only when there are effectively no gaps)
+smart_borders no_gaps
+
+# Hide edge borders only if there is one window with no gaps
+hide_edge_borders smart_no_gaps
+
+new_window normal 
+new_float normal
