@@ -151,4 +151,4 @@ alias prikey="more ~/.ssh/id_ecdsa | pbcopy | echo '=> Private key copied to pas
 alias jpp="python -m json.tool"
 
 # Weechat on VPS
-alias weechat="ssh christophe@jupiter.call-cc.be -t docker attach weechat"
+alias weechat="ssh christophe@ceres.call-cc.be -t docker attach weechat"
