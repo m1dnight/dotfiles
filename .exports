@@ -55,3 +55,6 @@ export PATH="$PATH:$HOME/.local/bin"
 # if [[ $(cat /proc/version) =~ microsoft ]]; then 
 # 	export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 # fi
+
+# Important tableflip on error
+export PROMPT_COMMAND='[ $? -eq 0 ] || printf "(╯°□ °）╯︵ ┻━┻\n"'
