@@ -1,3 +1,6 @@
+ServerAliveInterval 60
+
+
 Host christophe@call-cc.be
      User christophe
      HostName call-cc.be
@@ -6,21 +9,21 @@ Host christophe@call-cc.be
      User root
      HostName call-cc.be
  
- Host pi@trappist.localdomain
+ Host pi@trappist.local
      User pi
-     HostName trappist.localdomain 
+     HostName trappist.local 
  
- Host pi@pluto.localdomain 
+ Host pi@pluto.local 
      User pi 
-     HostName pluto.localdomain 
+     HostName pluto.local 
  
- Host christophe@neptune.localdomain 
+ Host christophe@neptune.local 
      User christophe
-     HostName neptune.localdomain 
+     HostName neptune.local 
  
- Host root@nas.localdomain 
+ Host root@nas.local 
      User root
-     HostName nas.localdomain 
+     HostName nas.local 
 
 Host christophe@christophe.dev
      User christophe
@@ -30,10 +33,7 @@ Host root@christophe.dev
      User root
      HostName christophe.dev
 
-Host root@andromeda.localdomain 
-    User root  
-    HostName andromeda.localdomain 
-
-Host christophe@andromeda.localdomain 
+Host christophe@rioolputje.local 
     User christophe
-    HostName andromeda.localdomain
+    HostName 134.184.43.197
+    Port 2224
