@@ -5,3 +5,18 @@ renamegit() {
     git push --set-upstream origin main 
     echo "Execute git symbolic-ref HEAD refs/heads/main on remote"
 }
+
+
+function share() {
+    # Calculate the absolute path of the given file.
+    abs_path=$1
+
+    # Calculate the filename.
+    filename=$(basename "${abs_path}")
+
+    # Url encode the filename to print to stdout.
+    encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<< ${filename})
+
+    scp "${abs_path}" christophe@call-cc.be:"/home/christophe/public_html/"
+	echo "https://call-cc.be/~christophe/${encoded}"
+}
