@@ -164,11 +164,11 @@ fi
 # ASDF 
 if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
 	# shellcheck source=/dev/null
-	. $HOME/.asdf/asdf.sh
+	. "${HOME}/.asdf/asdf.sh"
 fi
 if [[ -f "${HOME}/.asdf/completions/asdf.bash" ]]; then
 	# shellcheck source=/dev/null
-	. $HOME/.asdf/completions/asdf.bash
+	. "${HOME}/.asdf/completions/asdf.bash"
 fi
 
 for file in ~/.{bash_prompt,aliases,functions,path,dockerfunc,extra,exports,elementaryos}; do
