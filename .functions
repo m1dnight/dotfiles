@@ -17,6 +17,6 @@ function share() {
     # Url encode the filename to print to stdout.
     encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<< ${filename})
 
-    scp "${abs_path}" christophe@call-cc.be:"/home/christophe/public_html/"
+    scp "${abs_path}" christophe@call-cc.be:"/home/christophe/public_html/tmp/"
 	echo "https://call-cc.be/~christophe/${encoded}"
 }
