@@ -18,5 +18,5 @@ function share() {
     encoded=$(python3 -c "import urllib.parse; print(urllib.parse.quote(input()))" <<< ${filename})
 
     scp "${abs_path}" christophe@call-cc.be:"/home/christophe/public_html/tmp/"
-	echo "https://call-cc.be/~christophe/${encoded}"
+	echo "https://call-cc.be/~christophe/tmp/${encoded}"
 }
