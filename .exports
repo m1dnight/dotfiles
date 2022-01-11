@@ -58,3 +58,6 @@ export PATH="$PATH:$HOME/.local/bin"
 
 # Important tableflip on error
 export PROMPT_COMMAND='[ $? -eq 0 ] || printf "(╯°□ °）╯︵ ┻━┻\n"'
+
+export TIME='%Uuser %Ssystem %Eelapsed %PCPU (%Xtext+%Ddata %Mmax)k
+%Iinputs+%Ooutputs (%Fmajor+%Rminor)pagefaults %Wswaps '
