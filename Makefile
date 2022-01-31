@@ -18,10 +18,10 @@ dotfiles:
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
 
-	ln -fn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
+	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
 	# I don't know what this is supposed to do to be fair.
 	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
-	ln -fn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
+	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
 
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 	if [ -f /usr/local/bin/pinentry ]; then \
