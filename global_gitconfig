@@ -13,7 +13,7 @@
 		pretty = format:%h %Cblue%ad%Creset %ae %Cgreen%s%Creset
 [core]
 		editor = emacs
-		excludesfile = ~/.gitignore
+		excludesfile = /Users/christophe/.gitignore
 
 #################################################################################
 #### Colors
@@ -62,15 +62,5 @@
 		logp = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 		pushall = !git remote | xargs -L1 git push --all
 
-[difftool "sourcetree"]
-		cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-		path = 
-
-[mergetool "sourcetree"]
-		cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.2/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-		trustExitCode = true
-
-		# Push all remotes 
-		pusha = git remote | xargs -L1 git push --all
 [init]
 	defaultBranch = main
