@@ -162,13 +162,13 @@ if [[ -f "${HOME}/.travis/travis.sh" ]]; then
 fi
 
 # ASDF 
-if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
+if [[ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]]; then
 	# shellcheck source=/dev/null
-	. "${HOME}/.asdf/asdf.sh"
+	. $(brew --prefix asdf)/libexec/asdf.sh
 fi
-if [[ -f "${HOME}/.asdf/completions/asdf.bash" ]]; then
+if [[ -f "/usr/local/etc/bash_completion.d" ]]; then
 	# shellcheck source=/dev/null
-	. "${HOME}/.asdf/completions/asdf.bash"
+	. "/usr/local/etc/bash_completion.d/asdf.bash"
 fi
 
 for file in ~/.{bash_prompt,aliases,functions,path,dockerfunc,extra,exports,elementaryos}; do
