@@ -161,11 +161,16 @@ if [[ -f "${HOME}/.travis/travis.sh" ]]; then
 	source "${HOME}/.travis/travis.sh"
 fi
 
-# ASDF 
-if [[ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]]; then
-	# shellcheck source=/dev/null
-	. $(brew --prefix asdf)/libexec/asdf.sh
+
+if [[ "$OSTYPE" == "darwin" ]]; then
+	if [[ -f "$(brew --prefix asdf)/libexec/asdf.sh" ]]; then
+		# shellcheck source=/dev/null
+		. "$(brew --prefix asdf)/libexec/asdf.sh"
+	fi
 fi
+
+# ASDF 
+
 if [[ -f "/usr/local/etc/bash_completion.d" ]]; then
 	# shellcheck source=/dev/null
 	. "/usr/local/etc/bash_completion.d/asdf.bash"
