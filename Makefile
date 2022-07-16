@@ -9,26 +9,25 @@ dotfiles:
 		echo "Linking $$f"; \
 		ln -sfn $$file $(HOME)/$$f; \
 	done; \
-    mkdir -p $(HOME)/.local/share;
-	ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
+    # mkdir -p $(HOME)/.local/share;
+	# ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
 
-	mkdir -p $(HOME)/.config/ ;
-	ln -snf $(CURDIR)/i3 $(HOME)/.config ;
+	# mkdir -p $(HOME)/.config/ ;
+	# ln -snf $(CURDIR)/i3 $(HOME)/.config ;
 
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
 
 	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
+
 	# I don't know what this is supposed to do to be fair.
 	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
 
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
-	if [ -f /usr/local/bin/pinentry ]; then \
-		sudo ln -snf /usr/bin/pinentry /usr/local/bin/pinentry; \
-	fi;
 
 	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
+	
 	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
 
 .PHONY: test
