@@ -8,3 +8,6 @@ for file in ~/.{bashrc,bash_prompt,aliases,functions,path,dockerfunc,exports,sec
 	fi
 done
 unset file
+
+# Brew.
+eval "$(/opt/homebrew/bin/brew shellenv)"
