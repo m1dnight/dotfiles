@@ -9,5 +9,8 @@ for file in ~/.{bashrc,bash_prompt,aliases,functions,path,dockerfunc,exports,sec
 done
 unset file
 
+
 # Brew.
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if [[ $OSTYPE == 'darwin'* ]]; then
+	eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
