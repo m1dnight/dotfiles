@@ -9,12 +9,6 @@ case $- in
 	*) return;;
 esac
 
-# set a fancy prompt (non-color, unless we know we "want" color)
-case "$TERM" in
-	xterm-color) color_prompt=yes;;
-	xterm-256color) color_prompt=yes;;
-esac
-
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
