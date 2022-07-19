@@ -64,3 +64,6 @@
 
 [init]
 	defaultBranch = main
+
+[includeIf "gitdir:~/code/work/"]
+    path = .gitconfig-work
