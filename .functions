@@ -3,6 +3,7 @@
 function reclone() {
     dir=$(basename $(pwd))
     remote=$(git remote get-url origin)
+    branch=$(git branch --show-current)
     echo $dir
     echo $remote
     read -p "Are you sure you want to remove ${dir} and reclone this repository? " -n 1 -r
@@ -13,5 +14,6 @@ function reclone() {
         rm -Rf $dir 
         git clone $remote  
         cd $dir
+        git switch $branch
     fi
 }
