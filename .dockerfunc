@@ -3,5 +3,3 @@
 function docker-clean-exited() {
     docker ps -aq | xargs -n1 docker rm 
 }
-
-export docker-clean-exited
