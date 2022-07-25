@@ -2,3 +2,7 @@
 
 # Make OSX shut up about ZSH.
 export BASH_SILENCE_DEPRECATION_WARNING=1
+
+# Merge histories from multiple terminals.
+# http://northernmost.org/blog/flush-bash_history-after-each-command/
+export PROMPT_COMMAND='history -a'
