@@ -14,6 +14,7 @@
 [core]
 		editor = emacs
 		excludesfile = /Users/christophe/.gitignore
+   sshCommand = "ssh -i ~/.ssh/id_ecdsa"
 
 #################################################################################
 #### Colors
