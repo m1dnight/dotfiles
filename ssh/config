@@ -1,5 +1,8 @@
 ServerAliveInterval 60
 
+Host staging.weave.ly
+    HostName staging.weave.ly
+
 Host personal.gitlab.com
     IdentityFile ~/.ssh/id_ecdsa
     HostName gitlab.com
