@@ -1,5 +1,10 @@
 ServerAliveInterval 60
 
+Host api.weave.ly
+    HostName api.weave.ly
+    User weavely
+    Port 2245
+
 Host staging.weave.ly
     HostName staging.weave.ly
 
