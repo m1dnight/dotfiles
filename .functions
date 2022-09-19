@@ -17,3 +17,7 @@ function reclone() {
         git switch $branch
     fi
 }
+
+function generate_password() {
+    echo $(openssl rand -base64 64)
+}
