@@ -40,6 +40,11 @@ if hash kubectl 2>/dev/null; then
 fi
 
 # ASDF 
+if [[ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
+	# shellcheck source=/dev/null
+	. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
+fi
+
 if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
 	# shellcheck source=/dev/null
 	. "${HOME}/.asdf/asdf.sh"
