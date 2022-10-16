@@ -8,6 +8,9 @@ Host api.weave.ly
 Host staging.weave.ly
     HostName staging.weave.ly
 
+Host api.weave.ly
+    HostName api.weave.ly
+     
 Host personal.gitlab.com
     IdentityFile ~/.ssh/id_ecdsa
     HostName gitlab.com
