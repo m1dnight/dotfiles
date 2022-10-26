@@ -19,3 +19,7 @@ if [[ -f "/opt/homebrew/opt/asdf/libexec/asdf.sh" ]]; then
 	# shellcheck source=/dev/null
 	. "/opt/homebrew/opt/asdf/libexec/asdf.sh"
 fi
+
+# if [[ -f "$HOME/esp/esp-idf/export.sh" ]]; then
+# 	. $HOME/esp/esp-idf/export.sh
+# fi
