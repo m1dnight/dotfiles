@@ -23,7 +23,6 @@ dotfiles:
 	# I don't know what this is supposed to do to be fair.
 	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
-	ln -sfn $(CURDIR)/global_gitconfig_work $(HOME)/.gitconfig-work;
 
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 

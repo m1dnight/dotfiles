@@ -1,5 +1,0 @@
-[user]
-    email = "christophe@weave.ly"
-    name = "Christophe De Troyer"
-[core]
-   sshCommand = "ssh -i ~/.ssh/id_rsa_weavely"
