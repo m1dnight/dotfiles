@@ -1,17 +1,11 @@
 ServerAliveInterval 60
 
-Host api.weave.ly
-    HostName api.weave.ly
-    User weavely
-    Port 2245
+Host bloempot.localdomain
+    HostName bloempot.localdomain
+    User christophe
+    Port 22 
 
-Host staging.weave.ly
-    HostName staging.weave.ly
-
-Host api.weave.ly
-    HostName api.weave.ly
-     
-Host personal.gitlab.com
-    IdentityFile ~/.ssh/id_ecdsa
-    HostName gitlab.com
-    IdentitiesOnly yes
+Host call-cc.be
+    HostName call-cc.be
+    User christophe
+    Port 22
