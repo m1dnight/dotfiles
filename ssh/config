@@ -9,3 +9,8 @@ Host call-cc.be
     HostName call-cc.be
     User christophe
     Port 22
+
+Host groenenbrielstraat.localdomain 
+    HostName groenenbrielstraat.localdomain 
+    User christophe 
+    Port 22

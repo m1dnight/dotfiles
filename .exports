@@ -8,6 +8,8 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export PROMPT_COMMAND='history -a'
 
 export HISTSIZE=1000000
+# https://askubuntu.com/questions/15926/how-to-avoid-duplicate-entries-in-bash-history
+export HISTCONTROL=ignoreboth:erasedups
 
 # History in iex.
 export ERL_AFLAGS="-kernel shell_history enabled"
