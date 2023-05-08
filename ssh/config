@@ -11,10 +11,6 @@ Host call-cc.be
     Port 22
 
 Host groenenbrielstraat.localdomain 
-<<<<<<< HEAD
     HostName groenenbrielstraat.localdomain 
-=======
-    Hostname groenenbrielstraat.localdomain 
->>>>>>> origin/main
     User christophe 
     Port 22
