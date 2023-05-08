@@ -7,3 +7,7 @@ function docker-clean-exited() {
 function docker-clean-all() {
     docker ps -aq | xargs -n1 docker rm -f
 }
+
+function docker-rm-volumes() {
+    docker volume ls  -q | xargs -n1 docker volume rm
+}
