@@ -3,6 +3,33 @@ all: bin dotfiles etc ## Installs the bin and etc directory files and the dotfil
 
 
 .PHONY: dotfiles
+zsh:
+	for file in $(shell find $(CURDIR) -name ".*" -not -name "*bash*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git" -not -name ".*.swp" -not -name ".gnupg"); do \
+		f=$$(basename $$file); \
+		echo "Linking $$f"; \
+		ln -sfn $$file $(HOME)/$$f; \
+	done; \
+    # mkdir -p $(HOME)/.local/share;
+	# ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
+
+	# mkdir -p $(HOME)/.config/ ;
+	# ln -snf $(CURDIR)/i3 $(HOME)/.config ;
+
+	mkdir -p $(HOME)/.ssh/ ;
+	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
+
+	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
+
+	# I don't know what this is supposed to do to be fair.
+	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
+	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
+
+	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
+
+	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
+	
+	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
+
 dotfiles:
 	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git" -not -name ".*.swp" -not -name ".gnupg"); do \
 		f=$$(basename $$file); \
