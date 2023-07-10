@@ -5,10 +5,12 @@
 autoload -Uz compinit promptinit
 
 compinit
-promptinit
-
+# https://superuser.com/questions/1092033/how-can-i-make-zsh-tab-completion-fix-capitalization-errors-for-directories-and
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
+
+promptinit
 prompt walters
 
 for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
