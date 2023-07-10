@@ -3,28 +3,22 @@ all: bin dotfiles etc ## Installs the bin and etc directory files and the dotfil
 
 
 .PHONY: dotfiles
-zsh:
-	for file in $(shell find $(CURDIR) -name ".*" -not -name "*bash*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git" -not -name ".*.swp" -not -name ".gnupg"); do \
-		f=$$(basename $$file); \
-		echo "Linking $$f"; \
-		ln -sfn $$file $(HOME)/$$f; \
-	done; \
-    # mkdir -p $(HOME)/.local/share;
-	# ln -snf $(CURDIR)/.fonts $(HOME)/.local/share/fonts;
-
-	# mkdir -p $(HOME)/.config/ ;
-	# ln -snf $(CURDIR)/i3 $(HOME)/.config ;
+clean_bash: 
+	rm -f $(HOME)/.aliases $(HOME)/.bash_profile $(HOME)/.bash_prompt $(HOME)/.bashrc $(HOME)/.dockerfunc $(HOME)/.exports $(HOME)/.functions $(HOME)/.gitignore $(HOME)/.inputrc $(HOME)/.path $(HOME)/.secrets
+	
+zsh: clean_bash
+	ln -sfn $(CURDIR)/.zshrc $(HOME)/.zshrc;
+	ln -sfn $(CURDIR)/.zlogin $(HOME)/.zlogin;
+	ln -sfn $(CURDIR)/.zlogout $(HOME)/.zlogout;
+	ln -sfn $(CURDIR)/.zprofile $(HOME)/.zprofile;
+	ln -sfn $(CURDIR)/.zshenv $(HOME)/.zshenv;
 
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
 
 	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
 
-	# I don't know what this is supposed to do to be fair.
-	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
-
-	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 
 	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
 	
