@@ -7,3 +7,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 
 PROMPT='%/ %# '
+
+# History in iex.
+ERL_AFLAGS="-kernel shell_history enabled"

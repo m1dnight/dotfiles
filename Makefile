@@ -12,6 +12,14 @@ zsh: clean_bash
 	ln -sfn $(CURDIR)/.zlogout $(HOME)/.zlogout;
 	ln -sfn $(CURDIR)/.zprofile $(HOME)/.zprofile;
 	ln -sfn $(CURDIR)/.zshenv $(HOME)/.zshenv;
+	
+	ln -sfn $(CURDIR)/.dockerfunc $(HOME)/.dockerfunc;
+	ln -sfn $(CURDIR)/.functions $(HOME)/.functions;
+	ln -sfn $(CURDIR)/.path $(HOME)/.path;
+	ln -sfn $(CURDIR)/.secrets $(HOME)/.secrets;
+
+
+
 
 	mkdir -p $(HOME)/.ssh/ ;
 	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
