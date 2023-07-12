@@ -21,3 +21,64 @@ function reclone() {
 function generate_password() {
     echo $(openssl rand -base64 40)
 }
+
+# elixir helpers 
+function mix-save() {
+  if [ -f mix.exs ]; then
+    echo "Detected Elixir project..."
+    
+    if [ "$MIX_ENV" = "dev" ]; then
+      if [ -d _build ] && [ -d deps ]; then
+        echo "Backing up dir for dev environment..."
+        rm -Rf /tmp/deps.dev /tmp/_build.dev
+        rsync -rav --delete --progress _build/ /tmp/_build.dev
+        rsync -rav --delete --progress deps/ /tmp/deps.dev
+      else
+        echo "Missing _build and/or deps directories"
+      fi
+    elif [ "$MIX_ENV" = "test" ]; then
+      if [ -d _build ] && [ -d deps ]; then
+        echo "Backing up dir for test environment..."
+        rm -Rf /tmp/deps.test /tmp/_build.test
+        rsync -rav --delete --progress _build/ /tmp/_build.test
+        rsync -rav --delete --progress deps/ /tmp/deps.test
+      else
+        echo "Missing _build and/or deps directories"
+      fi
+    else
+      echo "MIX_ENV is not set to 'dev' or 'test'. No action taken."
+    fi
+  else
+    echo "No Elixir project detected. Please run this command in the root directory of an Elixir project."
+  fi
+}
+
+function mix-restore() {
+  if [ -f mix.exs ]; then
+    echo "Detected Elixir project..."
+    
+    if [ "$MIX_ENV" = "dev" ]; then
+      if [ -d /tmp/_build.dev ] && [ -d /tmp/deps.dev ]; then
+        echo "Restoring dir for dev environment..."
+        rm -Rf deps _build
+        rsync -rav --delete --progress /tmp/_build.dev/ _build
+        rsync -rav --delete --progress /tmp/deps.dev/ deps
+      else
+        echo "Missing _build and/or deps directories"
+      fi
+    elif [ "$MIX_ENV" = "test" ]; then
+      if [ -d /tmp/_build.test ] && [ -d /tmp/deps.test ]; then
+        echo "Restoring up dir for test environment..."
+        rm -Rf deps _build
+        rsync -rav --delete --progress /tmp/_build.test/ _build
+        rsync -rav --delete --progress /tmp/deps.test/ deps
+      else
+        echo "Missing _build and/or deps directories"
+      fi
+    else
+      echo "MIX_ENV is not set to 'dev' or 'test'. No action taken."
+    fi
+  else
+    echo "No Elixir project detected. Please run this command in the root directory of an Elixir project."
+  fi
+}

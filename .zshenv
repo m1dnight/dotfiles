@@ -3,7 +3,7 @@
 # When this file exists it will always be read.
 
 # default editor
-EDITOR="emacs -nw"
+EDITOR=emacs
 
 # history
 HISTFILE=~/.histfile

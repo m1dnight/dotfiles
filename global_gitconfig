@@ -17,7 +17,7 @@
 
 [core]
 	editor = emacs
-	excludesfile = /Users/christophe/.gitignore
+	excludesFile = ~/.gitignore
 	sshCommand = "ssh -i ~/.ssh/id_ecdsa"
 
 #################################################################################
