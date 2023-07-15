@@ -12,6 +12,7 @@ i3:
 
 common: 
 	ln -sfn $(CURDIR)/.dockerfunc $(HOME)/.dockerfunc;
+	ln -sfn $(CURDIR)/.aliases $(HOME)/.aliases;
 	ln -sfn $(CURDIR)/.functions $(HOME)/.functions;
 	ln -sfn $(CURDIR)/.path $(HOME)/.path;
 	ln -sfn $(CURDIR)/.secrets $(HOME)/.secrets;
