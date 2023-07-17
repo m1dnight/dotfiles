@@ -36,8 +36,8 @@ if [[ $0 == "-bash" ]]; then
     fi
 fi
 
-# # append completions to fpath
-# fpath=(${ASDF_DIR}/completions $fpath)
+# append asdf completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
 
 autoload -Uz compinit promptinit
 
