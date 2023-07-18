@@ -2,15 +2,14 @@
 #  Used for setting user's interactive shell configuration and executing commands, 
 # will be read when starting as an interactive shell.
 
-<<<<<<< HEAD
-# for colors in prompt
+# git and colors in prompt
 autoload -U colors && colors
-
-# Load version control information
 autoload -Uz vcs_info
 precmd() { vcs_info }
+
 zstyle ':vcs_info:git:*' formats '(%b)'
-=======
+
+# load in additional files
 for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
@@ -36,22 +35,12 @@ if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
 	. "${HOME}/.asdf/asdf.sh"
 fi
 
-# other files
-if [[ $0 == "-bash" ]]; then
-    echo "bash shell"
-    if [[ -f "${HOME}/.asdf/completions/asdf.bash" ]]; then
-        # shellcheck source=/dev/null
-        . "${HOME}/.asdf/completions/asdf.bash"
-    fi
-fi
-
 # append asdf completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
->>>>>>> origin/zsh
 
 autoload -Uz compinit promptinit
-
 compinit
+
 # https://superuser.com/questions/1092033/how-can-i-make-zsh-tab-completion-fix-capitalization-errors-for-directories-and
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -60,7 +49,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 promptinit
 prompt walters
 
-<<<<<<< HEAD
 for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
@@ -92,5 +80,3 @@ zstyle ':vcs_info:*' stagedstr ' +'
 # Set the format of the Git information for vcs_info
 zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
-=======
->>>>>>> origin/zsh
