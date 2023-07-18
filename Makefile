@@ -5,33 +5,31 @@ all: bin dotfiles etc ## Installs the bin and etc directory files and the dotfil
 .PHONY: dotfiles
 clean_bash: 
 	rm -f $(HOME)/.aliases $(HOME)/.bash_profile $(HOME)/.bash_prompt $(HOME)/.bashrc $(HOME)/.dockerfunc $(HOME)/.exports $(HOME)/.functions $(HOME)/.gitignore $(HOME)/.inputrc $(HOME)/.path $(HOME)/.secrets
-	
-zsh: clean_bash
+
+i3: 
+	mkdir -p $(HOME)/.config/ ;
+	ln -snf $(CURDIR)/i3 $(HOME)/.config ;
+
+common: 
+	ln -sfn $(CURDIR)/.dockerfunc $(HOME)/.dockerfunc;
+	ln -sfn $(CURDIR)/.aliases $(HOME)/.aliases;
+	ln -sfn $(CURDIR)/.functions $(HOME)/.functions;
+	ln -sfn $(CURDIR)/.path $(HOME)/.path;
+	ln -sfn $(CURDIR)/.secrets $(HOME)/.secrets;
+	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
+	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
+	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
+	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
+	mkdir -p $(HOME)/.ssh/ ;
+	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
+
+zsh: clean_bash common i3
 	ln -sfn $(CURDIR)/.zshrc $(HOME)/.zshrc;
 	ln -sfn $(CURDIR)/.zlogin $(HOME)/.zlogin;
 	ln -sfn $(CURDIR)/.zlogout $(HOME)/.zlogout;
 	ln -sfn $(CURDIR)/.zprofile $(HOME)/.zprofile;
 	ln -sfn $(CURDIR)/.zshenv $(HOME)/.zshenv;
 	
-	ln -sfn $(CURDIR)/.dockerfunc $(HOME)/.dockerfunc;
-	ln -sfn $(CURDIR)/.functions $(HOME)/.functions;
-	ln -sfn $(CURDIR)/.path $(HOME)/.path;
-	ln -sfn $(CURDIR)/.secrets $(HOME)/.secrets;
-
-
-
-
-	mkdir -p $(HOME)/.ssh/ ;
-	ln -snf $(CURDIR)/ssh/* $(HOME)/.ssh/ ;
-
-	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
-
-	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
-
-	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
-	
-	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
-
 dotfiles:
 	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git" -not -name ".*.swp" -not -name ".gnupg"); do \
 		f=$$(basename $$file); \
