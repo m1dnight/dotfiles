@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/bin/bash
 
 # Make OSX shut up about ZSH.
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -12,7 +12,10 @@ export HISTSIZE=1000000
 export HISTCONTROL=ignoreboth:erasedups
 
 # History in iex.
-export ERL_AFLAGS="-kernel shell_history enabled"
+export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
+
+# default editor
+EDITOR='emacs -nw'
 
 # Lang settings. Was necessary for Cocoapods.
 # export LANG=en_US.UTF-8

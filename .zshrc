@@ -1,5 +1,5 @@
 
-#  Used for setting user's interactive shell configuration and executing commands, 
+#  Used for setting user's interactive shell configuration and executing commands,
 # will be read when starting as an interactive shell.
 
 # git and colors in prompt
@@ -69,7 +69,7 @@ setopt prompt_subst
 # Run vcs_info just before a prompt is displayed (precmd)
 add-zsh-hook precmd vcs_info
 # add ${vcs_info_msg_0} to the prompt
-# e.g. here we add the Git information in red  
+# e.g. here we add the Git information in red
 PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%} %F{red}${vcs_info_msg_0_}%f %# '
 
 # Enable checking for (un)staged changes, enabling use of %u and %c
@@ -80,3 +80,7 @@ zstyle ':vcs_info:*' stagedstr ' +'
 # Set the format of the Git information for vcs_info
 zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
+
+
+# no dupes in history
+setopt histignorealldups
