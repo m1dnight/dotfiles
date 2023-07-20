@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "foo"
+
 # Make OSX shut up about ZSH.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
@@ -15,7 +17,7 @@ export HISTCONTROL=ignoreboth:erasedups
 export ERL_AFLAGS="-kernel shell_history enabled -kernel shell_history_file_bytes 1024000"
 
 # default editor
-EDITOR='emacs -nw'
+export EDITOR='emacs -nw'
 
 # Lang settings. Was necessary for Cocoapods.
 # export LANG=en_US.UTF-8
