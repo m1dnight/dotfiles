@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "foo"
-
 # Make OSX shut up about ZSH.
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
