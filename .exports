@@ -15,6 +15,6 @@ export HISTCONTROL=ignoreboth:erasedups
 export ERL_AFLAGS="-kernel shell_history enabled"
 
 # Lang settings. Was necessary for Cocoapods.
-# export LANG=en_US.UTF-8
-# export LANGUAGE=en_US.UTF-8
-# export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
