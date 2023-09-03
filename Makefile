@@ -3,16 +3,17 @@ all: bin dotfiles etc ## Installs the bin and etc directory files and the dotfil
 
 
 .PHONY: dotfiles
-clean_bash: 
+clean_bash:
 	rm -f $(HOME)/.aliases $(HOME)/.bash_profile $(HOME)/.bash_prompt $(HOME)/.bashrc $(HOME)/.dockerfunc $(HOME)/.exports $(HOME)/.functions $(HOME)/.gitignore $(HOME)/.inputrc $(HOME)/.path $(HOME)/.secrets
 
-i3: 
+i3:
 	mkdir -p $(HOME)/.config/ ;
 	ln -snf $(CURDIR)/i3 $(HOME)/.config ;
 
-common: 
+common:
 	ln -sfn $(CURDIR)/.dockerfunc $(HOME)/.dockerfunc;
 	ln -sfn $(CURDIR)/.aliases $(HOME)/.aliases;
+	ln -sfn $(CURDIR)/.exports $(HOME)/.exports;
 	ln -sfn $(CURDIR)/.functions $(HOME)/.functions;
 	ln -sfn $(CURDIR)/.path $(HOME)/.path;
 	ln -sfn $(CURDIR)/.secrets $(HOME)/.secrets;
@@ -29,7 +30,7 @@ zsh: clean_bash common i3
 	ln -sfn $(CURDIR)/.zlogout $(HOME)/.zlogout;
 	ln -sfn $(CURDIR)/.zprofile $(HOME)/.zprofile;
 	ln -sfn $(CURDIR)/.zshenv $(HOME)/.zshenv;
-	
+
 dotfiles:
 	for file in $(shell find $(CURDIR) -name ".*" -not -name ".gitignore" -not -name ".travis.yml" -not -name ".git" -not -name ".*.swp" -not -name ".gnupg"); do \
 		f=$$(basename $$file); \
@@ -54,7 +55,7 @@ dotfiles:
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 
 	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
-	
+
 	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
 
 .PHONY: test
