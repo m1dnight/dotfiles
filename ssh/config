@@ -4,6 +4,20 @@ Host call-cc.be
   HostName call-cc.be
   User administrator
  
+ Host andromeda.localdomain
+  HostName andromeda.localdomain
+  ProxyJump  call-cc.be
+ 
+ Host exbin.localdomain
+  HostName exbin.localdomain
+  User administrator
+  ProxyJump  call-cc.be
+ 
+ Host torrents.localdomain
+  HostName torrents.localdomain
+  User administrator
+  ProxyJump  call-cc.be
+ 
 Host europa.local
   HostName europa.local
   ProxyJump  call-cc.be
@@ -13,10 +27,9 @@ Host plex.localdomain
   User administrator
   ProxyJump  call-cc.be
  
-Host development.localdomain
-  HostName development.localdomain
+Host loomy-development.localdomain
+  HostName loomy-development.localdomain
   User administrator
-  ProxyJump  call-cc.be
  
 Host protput.localdomain
   HostName protput.localdomain
