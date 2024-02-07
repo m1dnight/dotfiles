@@ -3,11 +3,3 @@
 function generate_password() {
     echo $(openssl rand -base64 40)
 }
-
-function docker_clean() {
-  docker ps -aq | xargs -n1 docker rm -f 
-  docker system prune -f 
-  docker image prune -f 
-  docker volume prune -f 
-  docke network prune -f 
-}
