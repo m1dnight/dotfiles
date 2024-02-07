@@ -11,3 +11,12 @@ function docker-clean-all() {
 function docker-rm-volumes() {
     docker volume ls  -q | xargs -n1 docker volume rm
 }
+
+
+function docker_clean() {
+  docker ps -aq | xargs -n1 docker rm -f 
+  docker system prune -f 
+  docker image prune -f 
+  docker volume prune -f 
+  docker network prune -f 
+}

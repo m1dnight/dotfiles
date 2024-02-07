@@ -1,23 +1,13 @@
 #!/bin/bash
 
-function reclone() {
-    dir=$(basename $(pwd))
-    remote=$(git remote get-url origin)
-    branch=$(git branch --show-current)
-    echo $dir
-    echo $remote
-    read -p "Are you sure you want to remove ${dir} and reclone this repository? " -n 1 -r
-    echo    # (optional) move to a new line
-    if [[ $REPLY =~ ^[Yy]$ ]]
-    then
-        cd .. 
-        rm -Rf $dir 
-        git clone $remote  
-        cd $dir
-        git switch $branch
-    fi
-}
-
 function generate_password() {
     echo $(openssl rand -base64 40)
+}
+
+function docker_clean() {
+  docker ps -aq | xargs -n1 docker rm -f 
+  docker system prune -f 
+  docker image prune -f 
+  docker volume prune -f 
+  docke network prune -f 
 }
