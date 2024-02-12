@@ -1,18 +1,5 @@
 #!/bin/bash
 
-function docker-clean-exited() {
-    docker ps -aq | xargs -n1 docker rm 
-}
-
-function docker-clean-all() {
-    docker ps -aq | xargs -n1 docker rm -f
-}
-
-function docker-rm-volumes() {
-    docker volume ls  -q | xargs -n1 docker volume rm
-}
-
-
 function docker_clean() {
   docker ps -aq | xargs -n1 docker rm -f 
   docker system prune -f 
