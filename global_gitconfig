@@ -1,6 +1,16 @@
 [user]
 	email = christophe.detroyer@gmail.com
 	name = Christophe De Troyer
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOkft/6UX+r5mhV+4KrEe7bAgCQizCyfRcp0MoLQJVwO
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+	gpgsign = true
 
 [push]
 	default = matching
@@ -44,6 +54,7 @@
 
 #################################################################################
 #### Aliases
+
 [alias]
 	# Show all of my configured aliases
 	aliases = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
@@ -72,3 +83,7 @@
 
 [diff]
 	wsErrorHighlight = all
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true

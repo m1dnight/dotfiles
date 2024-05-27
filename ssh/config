@@ -1,42 +1,8 @@
 ServerAliveInterval 60
 
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  
 Host call-cc.be
   HostName call-cc.be
   User administrator
- 
- Host andromeda.localdomain
-  HostName andromeda.localdomain
-  ProxyJump  call-cc.be
- 
- Host exbin.localdomain
-  HostName exbin.localdomain
-  User administrator
-  ProxyJump  call-cc.be
- 
- Host torrents.localdomain
-  HostName torrents.localdomain
-  User administrator
-  ProxyJump  call-cc.be
- 
-Host europa.local
-  HostName europa.local
-  ProxyJump  call-cc.be
- 
-Host plex.localdomain
-  HostName plex.localdomain
-  User administrator
-  ProxyJump  call-cc.be
- 
-Host loomy-development.localdomain
-  HostName loomy-development.localdomain
-  User administrator
- 
-Host protput.localdomain
-  HostName protput.localdomain
-  User administrator
-  ProxyJump  call-cc.be
- 
-Host gitlab-runner.localdomain
-  HostName gitlab-runner.localdomain
-  User administrator
-  ProxyJump  call-cc.be
