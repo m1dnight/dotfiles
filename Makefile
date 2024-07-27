@@ -17,6 +17,7 @@ common:
 	ln -sfn $(CURDIR)/.functions $(HOME)/.functions;
 	ln -sfn $(CURDIR)/.path $(HOME)/.path;
 	ln -sfn $(CURDIR)/.secrets $(HOME)/.secrets;
+	ln -sfn $(CURDIR)/global_gitattributes $(HOME)/.gitattributes;
 	ln -sfn $(CURDIR)/global_gitignore $(HOME)/.gitignore;
 	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
 	ln -snf $(CURDIR)/wallpaper.jpg $(HOME)/wallpaper.jpg
