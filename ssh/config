@@ -1,5 +1,9 @@
 ServerAliveInterval 60
 
+Host pop-os.local
+  HostName pop-os.local
+  User christophe
+
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   
