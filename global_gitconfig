@@ -29,7 +29,7 @@
 	editor = emacs
 	excludesFile = ~/.gitignore
 	sshCommand = "ssh -i ~/.ssh/id_ecdsa"
-	attributesfile = /Users/christophe/.gitattributes
+	attributesFile = ~/.gitattributes
 	
 #################################################################################
 #### Colors

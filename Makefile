@@ -52,6 +52,7 @@ dotfiles:
 	# I don't know what this is supposed to do to be fair.
 	# git update-index --skip-worktree $(CURDIR)/.gitconfig;
 	ln -sfn $(CURDIR)/global_gitconfig $(HOME)/.gitconfig;
+	ln -sfn $(CURDIR)/global_gitattributes $(HOME)/.gitattributes;
 
 	ln -snf $(CURDIR)/.bash_profile $(HOME)/.profile;
 
