@@ -6,4 +6,4 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
 # flutter 
-export PATH="$PATH:$HOME/development/flutter/bin"
+export PATH="$HOME/development/flutter/bin":$PATH

@@ -27,7 +27,7 @@
 
 [core]
 	editor = emacs
-	excludesFile = ~/.gitignore
+	excludesfile = /Users/christophe/.gitignore
 	sshCommand = "ssh -i ~/.ssh/id_ecdsa"
 	attributesFile = ~/.gitattributes
 	
@@ -88,3 +88,10 @@
 	format = ssh
 [commit]
 	gpgsign = true
+	template = /Users/christophe/.stCommitMsg
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
