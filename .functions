@@ -1,5 +1,5 @@
 #!/bin/bash
 
 function generate_password() {
-    echo $(openssl rand -base64 40)
+    openssl rand -base64 40
 }
