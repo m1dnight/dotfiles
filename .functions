@@ -3,3 +3,7 @@
 function generate_password() {
     openssl rand -base64 40
 }
+
+function gk() {
+    gitk --all . & disown
+}
