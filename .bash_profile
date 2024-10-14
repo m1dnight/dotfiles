@@ -1,5 +1,5 @@
 #!/bin/bash
 
 if [[ -f "$HOME/.cargo/env" ]]; then
-. "$HOME/.cargo/env"    
+. "${HOME}/.cargo/env"
 fi
