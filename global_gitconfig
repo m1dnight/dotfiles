@@ -78,6 +78,7 @@
 
 	pushall = !git remote | xargs -L1 git push --all
 
+	bb = !~/better_branch.sh
 [init]
 	defaultBranch = main
 

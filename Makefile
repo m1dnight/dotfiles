@@ -60,6 +60,9 @@ dotfiles:
 
 	ln -snf $(CURDIR)/.secrets $(HOME)/.secrets
 
+	ln -snf $(CURDIR)/better_branch.sh $(HOME)/better_branch.sh
+
+
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
 
