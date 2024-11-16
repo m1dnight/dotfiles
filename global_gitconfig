@@ -29,6 +29,7 @@
 	excludesfile = /Users/christophe/.gitignore
 	sshCommand = "ssh -i ~/.ssh/id_ecdsa"
 	attributesFile = ~/.gitattributes
+	editor = "emacsclient -nw -c"
 	
 #################################################################################
 #### Colors
@@ -86,6 +87,7 @@
 
 [diff]
 	wsErrorHighlight = all
+	tool = difft
 [gpg]
 	format = ssh
 [commit]
