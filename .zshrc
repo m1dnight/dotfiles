@@ -35,6 +35,11 @@ if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
 	. "${HOME}/.asdf/asdf.sh"
 fi
 
+if [[ -f "${HOME}/.cargo/env" ]]; then
+	. "$HOME/.cargo/env"
+fi
+
+
 # append asdf completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 

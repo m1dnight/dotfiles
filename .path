@@ -5,5 +5,5 @@ export PATH="$PATH":"$HOME/.pub-cache/bin"
 # gnu sed
 export PATH="/opt/homebrew/opt/gnu-sed/libexec/gnubin:$PATH"
 
-# flutter 
+# flutter
 export PATH="$HOME/development/flutter/bin":$PATH
