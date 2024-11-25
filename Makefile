@@ -62,6 +62,11 @@ dotfiles:
 
 	ln -snf $(CURDIR)/better_branch.sh $(HOME)/better_branch.sh
 
+SERVICE_FILES = macos/services
+services: $(SERVICE_FILES)/*
+	@echo $^
+	launchctl unload $^
+	launchctl load $^
 
 .PHONY: test
 test: shellcheck ## Runs all the tests on the files in the repository.
