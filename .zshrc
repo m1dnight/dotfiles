@@ -7,7 +7,7 @@ autoload -U colors && colors
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-zstyle ':vcs_info:git:*' formats '(%b)'
+# zstyle ':vcs_info:git:*' formats '(%b)'
 
 # load in additional files
 for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
@@ -75,8 +75,10 @@ setopt prompt_subst
 add-zsh-hook precmd vcs_info
 # add ${vcs_info_msg_0} to the prompt
 # e.g. here we add the Git information in red
-PROMPT='%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%} %F{red}${vcs_info_msg_0_}%f %# '
 
+PROMPT='%{$bg[cyan]%}%{$fg[white]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[white]%}%~ %{$reset_color%} %F{magenta}${vcs_info_msg_0_}%f %# '
+
+RPS1='%D{%L:%M:%S}'
 # Enable checking for (un)staged changes, enabling use of %u and %c
 zstyle ':vcs_info:*' check-for-changes true
 # Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
