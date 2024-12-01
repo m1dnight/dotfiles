@@ -18,7 +18,7 @@
 [alias]
 	lg = log --oneline
 	aa = add -A :/
-	
+
 [log]
 	date = relative
 
@@ -30,7 +30,7 @@
 	sshCommand = "ssh -i ~/.ssh/id_ecdsa"
 	attributesFile = ~/.gitattributes
 	editor = "emacsclient -nw -c"
-	
+
 #################################################################################
 #### Colors
 
@@ -69,13 +69,13 @@
 	export = archive -o latest.tar.gz -9 --prefix=latest/
 
 	# Remove all files
-	rmall = rm -r --cached . 
+	rmall = rm -r --cached .
 	diffprev = diff HEAD^ HEAD
 
 	wip = !git add -A :/ && git commit -m 'wip commit'
 
 	# Show pretty log output
-	logp = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' 
+	logp = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 
 	pushall = !git remote | xargs -L1 git push --all
 
@@ -95,9 +95,12 @@
 	template = /Users/christophe/.stCommitMsg
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [rerere]
 	enabled = true
+[merge]
+	conflictStyle = diff3
+	ff = false

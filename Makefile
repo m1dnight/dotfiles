@@ -65,6 +65,7 @@ dotfiles:
 SERVICE_FILES = macos/services
 services: $(SERVICE_FILES)/*
 	@echo $^
+	cp $^ ~/Library/LaunchAgents/
 	launchctl unload $^
 	launchctl load $^
 

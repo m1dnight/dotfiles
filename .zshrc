@@ -76,7 +76,8 @@ add-zsh-hook precmd vcs_info
 # add ${vcs_info_msg_0} to the prompt
 # e.g. here we add the Git information in red
 
-PROMPT='%{$bg[cyan]%}%{$fg[white]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[white]%}%~ %{$reset_color%} %F{magenta}${vcs_info_msg_0_}%f %# '
+# PROMPT='%{$bg[cyan]%}%{$fg[white]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[white]%}%~ %{$reset_color%} %F{magenta}${vcs_info_msg_0_}%f %# '
+PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[white]%}%~ %{$reset_color%} %F{magenta}${vcs_info_msg_0_}%f %# '
 
 RPS1='%D{%L:%M:%S}'
 # Enable checking for (un)staged changes, enabling use of %u and %c
