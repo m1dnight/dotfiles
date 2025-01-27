@@ -112,7 +112,11 @@
 [maintenance]
 	auto = false
 	strategy = incremental
-	repo = /Users/christophe/Documents/Code/scripts/dotfiles
 
 [rebase]
 	updateRefs = true
+
+[maintenance "prefetch"]
+	enabled = true
+	auto = false
+	strategy = incremental
