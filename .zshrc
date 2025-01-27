@@ -35,7 +35,7 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 ### git: Show +N/-N when your local branch is ahead-of or behind remote HEAD.
 # Make sure you have added misc to your 'formats':  %m
-zstyle ':vcs_info:git*+set-message:*' hooks git-st
+zstyle ':vcs_info:git*+set-message:*' hooks git-st git-untracked
 +vi-git-st() {
     local ahead behind
     local -a gitstatus
@@ -50,10 +50,25 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-st
     ahead=${ahead_and_behind[1]}
     behind=${ahead_and_behind[2]}
 
+	((( $ahead)) || (( $behind))) || gitstatus+=( "✓" )
     (( $ahead )) && gitstatus+=( "+${ahead}" )
-    (( $behind )) && gitstatus+=( "🚨${behind}" )
+    (( $behind )) && gitstatus+=( "-${behind}" )
 
     hook_com[misc]+=${(j:/:)gitstatus}
+}
+
+### git: Show untracked branches
+# Make sure you have added misc to your 'formats':  %m
+# zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
++vi-git-untracked() {
+    local -a xx
+
+    # Exit early in case the worktree has a remote branch
+    git rev-parse ${hook_com[branch]}@{push} >/dev/null 2>&1 && return 0
+
+	xx+=( "untracked" )
+
+    hook_com[misc]+=${(j:/:)xx}
 }
 
 ################################################################################
