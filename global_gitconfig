@@ -15,6 +15,7 @@
 [push]
 	default = matching
 
+	autoSetupRemote = true
 [alias]
 	lg = log --oneline
 	aa = add -A :/
