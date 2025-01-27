@@ -2,12 +2,61 @@
 #  Used for setting user's interactive shell configuration and executing
 # commands, will be read when starting as an interactive shell.
 
-# git and colors in prompt
+################################################################################
+# import all files from dotfiles
+for file in ~/.{aliases,functions,dockerfunc,extra,exports,path}; do
+	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
+		# shellcheck source=/dev/null
+		source "$file"
+	fi
+done
+unset file
+
+################################################################################
+
 autoload -U colors && colors
 autoload -Uz vcs_info
 precmd() { vcs_info }
 
-# zstyle ':vcs_info:git:*' formats '(%b)'
+################################################################################
+# vcs_info configuration
+
+# Enable checking for (un)staged changes, enabling use of %u and %c
+zstyle ':vcs_info:*' check-for-changes true
+# Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
+zstyle ':vcs_info:*' unstagedstr ' *'
+zstyle ':vcs_info:*' stagedstr ' +'
+# Set the format of the Git information for vcs_info
+# %m is the ahead/before diff
+zstyle ':vcs_info:git:*' formats       '(%b%u%c|%m)'
+zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
+
+# zstyle ':vcs_info:*+*:*' debug true
+
+### git: Show +N/-N when your local branch is ahead-of or behind remote HEAD.
+# Make sure you have added misc to your 'formats':  %m
+zstyle ':vcs_info:git*+set-message:*' hooks git-st
++vi-git-st() {
+    local ahead behind
+    local -a gitstatus
+
+    # Exit early in case the worktree is on a detached HEAD
+    git rev-parse ${hook_com[branch]}@{upstream} >/dev/null 2>&1 || return 0
+
+    local -a ahead_and_behind=(
+        $(git rev-list --left-right --count HEAD...${hook_com[branch]}@{upstream} 2>/dev/null)
+    )
+
+    ahead=${ahead_and_behind[1]}
+    behind=${ahead_and_behind[2]}
+
+    (( $ahead )) && gitstatus+=( "+${ahead}" )
+    (( $behind )) && gitstatus+=( "🚨${behind}" )
+
+    hook_com[misc]+=${(j:/:)gitstatus}
+}
+
+################################################################################
 
 # append asdf completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -22,17 +71,6 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 promptinit
 prompt walters
 
-for file in ~/.{aliases,functions,dockerfunc,extra,exports,path}; do
-	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
-		# shellcheck source=/dev/null
-		source "$file"
-	fi
-done
-unset file
-
-# setopt PROMPT_SUBST
-# PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg[yellow]%}%~ %{$reset_color%} ${vcs_info_msg_0_}%% "
-
 # Autoload zsh add-zsh-hook and vcs_info functions (-U autoload w/o substition, -z use zsh style)
 autoload -Uz add-zsh-hook vcs_info
 # Enable substitution in the prompt.
@@ -42,19 +80,18 @@ add-zsh-hook precmd vcs_info
 # add ${vcs_info_msg_0} to the prompt
 # e.g. here we add the Git information in red
 
+
+################################################################################
+# prompt
+
 # PROMPT='%{$bg[cyan]%}%{$fg[white]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[white]%}%~ %{$reset_color%} %F{magenta}${vcs_info_msg_0_}%f %# '
 PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[red]%}%m %{$fg[white]%}%~ %{$reset_color%} %F{magenta}${vcs_info_msg_0_}%f %# '
 
 RPS1='%D{%L:%M:%S}'
-# Enable checking for (un)staged changes, enabling use of %u and %c
-zstyle ':vcs_info:*' check-for-changes true
-# Set custom strings for an unstaged vcs repo changes (*) and staged changes (+)
-zstyle ':vcs_info:*' unstagedstr ' *'
-zstyle ':vcs_info:*' stagedstr ' +'
-# Set the format of the Git information for vcs_info
-zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
-zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
+
+################################################################################
+# history
 
 # https://unix.stackexchange.com/questions/273861/unlimited-history-in-zsh
 setopt histignorealldups
