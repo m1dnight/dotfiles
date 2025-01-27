@@ -9,17 +9,6 @@ precmd() { vcs_info }
 
 # zstyle ':vcs_info:git:*' formats '(%b)'
 
-# load in additional files
-for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
-	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
-		# shellcheck source=/dev/null
-		source "$file"
-	fi
-done
-unset file
-
-
-
 # append asdf completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
 
@@ -33,7 +22,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 promptinit
 prompt walters
 
-for file in ~/.{aliases,functions,path,dockerfunc,extra,exports}; do
+for file in ~/.{aliases,functions,dockerfunc,extra,exports,path}; do
 	if [[ -r "$file" ]] && [[ -f "$file" ]]; then
 		# shellcheck source=/dev/null
 		source "$file"
