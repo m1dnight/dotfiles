@@ -1,5 +1,12 @@
 ServerAliveInterval 60
 
+Host bloempot.localdomain
+  HostName bloempot.localdomain
+  User christophe
+
+Host beets.localdomain
+  User debian
+   
 Host *.localdomain
   ProxyJump call-cc.be
 
