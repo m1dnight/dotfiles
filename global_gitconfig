@@ -15,6 +15,7 @@
 [push]
 	default = matching
 	autoSetupRemote = true
+	default = upstream
 
 [alias]
 	lg = log --oneline
@@ -116,6 +117,8 @@
 
 [rebase]
 	updateRefs = true
+	rebaseMerges = true
+	autoSquash = true
 
 [maintenance "prefetch"]
 	enabled = true
