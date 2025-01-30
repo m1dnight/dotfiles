@@ -2,11 +2,19 @@ ServerAliveInterval 60
 
 Host bloempot.localdomain
   HostName bloempot.localdomain
+  ForwardAgent yes
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+  User christophe
+
+Host deurklink.localdomain
+  HostName deurklink.localdomain
+  ForwardAgent yes
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
   User christophe
 
 Host beets.localdomain
   User debian
-   
+
 Host *.localdomain
   ProxyJump call-cc.be
 
