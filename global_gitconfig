@@ -13,7 +13,6 @@
 	gpgsign = true
 
 [push]
-	default = matching
 	autoSetupRemote = true
 	default = upstream
 
