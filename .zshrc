@@ -130,3 +130,9 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 #foo
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/christophe/.lmstudio/bin"
+
+. "$HOME/.atuin/bin/env"
+
+eval "$(atuin init zsh)"
